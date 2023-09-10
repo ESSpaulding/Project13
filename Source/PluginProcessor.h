@@ -59,7 +59,7 @@ public:
     
     enum class DSP_Option
     {
-      Phase,
+        Phase,
         Chorus,
         OverDrive,
         LadderFilter,
@@ -85,6 +85,11 @@ public:
     juce::AudioParameterFloat* chorusMixPercent = nullptr;
     
     juce::AudioParameterFloat* overdriveSaturation = nullptr;
+    
+    juce::AudioParameterChoice* ladderFilterMode = nullptr;
+    juce::AudioParameterFloat* ladderFilterCutoffHz = nullptr;
+    juce::AudioParameterFloat* ladderFilterResonance = nullptr;
+    juce::AudioParameterFloat* ladderFilterDrive = nullptr;
     
     
 private:
@@ -113,7 +118,7 @@ private:
         DSP dsp;
     };
     
-    DSP_Choice<juce::dsp::DelayLine<float>> delay;
+    //DSP_Choice<juce::dsp::DelayLine<float>> delay;
     DSP_Choice<juce::dsp::Phaser<float>> phaser;
     DSP_Choice<juce::dsp::Chorus<float>> chorus;
     DSP_Choice<juce::dsp::LadderFilter<float>> overdrive, ladderFilter;
